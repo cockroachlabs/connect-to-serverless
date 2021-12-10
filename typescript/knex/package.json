@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "@types/knex": "^0.16.1",
+    "@types/node": "^16.11.12",
+    "@types/pg": "^8.6.1",
+    "knex": "^0.95.14",
+    "pg": "^8.7.1"
+  }
+}
