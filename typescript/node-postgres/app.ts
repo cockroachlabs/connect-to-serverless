@@ -1,28 +1,52 @@
+// To run:
+// npm install
+// brew install tsc
+// tsc && node dist/app.js
+
 // Use the node-postgres library
 import { Pool, Client } from 'pg';
 
 //
 // CONFIGURATION
 //
+// The configuration paramater can be set directly in the code by changing the string values
+// or they can be set as environment variables.
+// E.g., on Mac OSX or Linux, use 'export CRDB_USERNAME=app' to set it as an environment variable
+//
 
 // Must be changed
-const username = process.env.CRDB_USERNAME || 'app' // change this
-const password = process.env.CRDB_PASSWORD || 'password' // change this
-const certdir = process.env.CRDB_CERTDIR || '/Users/jonstjohn' // change this to your home directory or the directory where your certs are
-const cluster = process.env.CRDB_CLUSTER || 'sweet-donkey-123' // change this
+const username = process.env.CRDB_USERNAME || 'app' // database username
+const password = process.env.CRDB_PASSWORD || 'password' // database password
+const certpath = process.env.CRDB_CERTPATH || '/Users/jonstjohn/.postgresql/root.crt' // path to root certificate
+const cluster = process.env.CRDB_CLUSTER || 'sweet-donkey-123' // cluster name with the number identifier
 
 // Might need to be changed
-const database = process.env.CRDB_DATABASE || 'defaultdb' // may need to change this
-const host = process.env.CRDB_HOST || 'free-tier.gcp-us-central1.cockroachlabs.cloud' // may need to change this
-
-// Probably don't need to change this
-const certname = process.env.CRDB_CERTNAME || 'root.crt'
+const database = process.env.CRDB_DATABASE || 'defaultdb' // database
+const host = process.env.CRDB_HOST || 'free-tier.gcp-us-central1.cockroachlabs.cloud' // cluster host
 
 //
 // BUILD CONNECTION STRING AND CONNECT
 //
 // Create the connection string
-const connectionString = 'postgresql://' + username + ':' + password + '@' + host + ':26257/' + database + '?sslmode=verify-full&sslrootcert=' + certdir + '/.postgresql/' + certname + '&options=--cluster%3D' + cluster
+const connectionString = 'postgresql://' + // use the postgresql wire protocol
+    username +                       // username
+    ':' +                            // separator between username and password
+    password +                       // password
+    '@' +                            // separator between username/password and port
+    host +                           // host
+    ':' +                            // separator between host and port
+    '26257' +                        // port, CockroachDB Serverless always uses 26257
+    '/' +                            // separator between port and database
+    database +                       // database
+    '?' +                            // separator for url parameters
+    'sslmode=verify-full' +          // always use verify-full for CockroachDB Serverless
+    '&' +                            // url parameter separator
+    'sslrootcert=' + certpath +      // full path to ca certificate 
+    '&' +                            // url parameter separator
+    'options=--cluster%3D' + cluster // cluster name is passed via the options url parameter
+
+
+
 const pool = new Pool({
   connectionString,
 })
@@ -30,7 +54,7 @@ const pool = new Pool({
 //
 // EXECUTE QUERY
 //
-pool.query('SELECT NOW()', (err, res) => {
+pool.query('SELECT version()', (err, res) => {
   console.log(err, res)
   pool.end()
 })

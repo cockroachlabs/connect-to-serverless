@@ -1,3 +1,7 @@
+// To run:
+// npm install
+// node app.js
+
 const { default: knex } = require('knex')
 
 //
