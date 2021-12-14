@@ -4,7 +4,8 @@
 // tsc && node dist/app.js
 
 // Use the node-postgres library
-import { Sequelize } from 'sequelize';
+import express from 'express';
+import { Pool } from 'pg';
 
 //
 // CONFIGURATION
@@ -47,13 +48,27 @@ const connectionString = 'postgresql://' + // use the postgresql wire protocol
 
 
 
-    var sequelize = new Sequelize(connectionString);
+const pool = new Pool({
+    connectionString,
+})
 
-    (async function(){
-      try {
-        await sequelize.authenticate();
-        console.log('Connection has been established successfully.');
-      } catch (error) {
-        console.error('Unable to connect to the database:', error);
-      }
-    })()
+const app = express()
+const port = 3003
+
+//
+// EXECUTE QUERY
+//
+const getVersion = (request: any, response: any) => {
+  pool.query('SELECT version()', (err: Error, res: any) => {
+    if (err) {
+        throw err
+    }
+    response.status(200).json(res.rows)
+  })
+}
+
+app.get('/', getVersion)
+
+app.listen(port, () => {
+    console.log(`App running on port ${port}.`)
+})

@@ -14,14 +14,14 @@ const { Pool, Client } = require('pg')
 //
 
 // Must be changed
-const username = process.env.CRDB_USERNAME || 'app' // database username
-const password = process.env.CRDB_PASSWORD || 'password' // database password
-const certpath = process.env.CRDB_CERTPATH || '/Users/jonstjohn/.postgresql/root.crt' // path to root certificate
-const cluster = process.env.CRDB_CLUSTER || 'sweet-donkey-123' // cluster name with the number identifier
+const username = process.env.CRDB_USERNAME  || 'app' // database username
+const password = process.env.CRDB_PASSWORD  || 'password' // database password
+const certpath = process.env.CRDB_CERTPATH  || '/Users/jonstjohn/.postgresql/root.crt' // path to root certificate
+const cluster  = process.env.CRDB_CLUSTER   || 'sweet-donkey-123' // cluster name with the number identifier
 
 // Might need to be changed
-const database = process.env.CRDB_DATABASE || 'defaultdb' // database
-const host = process.env.CRDB_HOST || 'free-tier.gcp-us-central1.cockroachlabs.cloud' // cluster host
+const database = process.env.CRDB_DATABASE  || 'defaultdb' // database
+const host     = process.env.CRDB_HOST      || 'free-tier.gcp-us-central1.cockroachlabs.cloud' // cluster host
 
 //
 // BUILD CONNECTION STRING AND CONNECT
