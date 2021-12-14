@@ -1,4 +1,4 @@
-# Connection to CockroachDB Serverless using TypeScript and Express
+# Connection to CockroachDB Serverless using TypeScript and Node-Postgres (pg)
 
 ## How to Run this Code
 
@@ -17,10 +17,6 @@ tsc && node dist/app.js
 
 This command requires the TypeScript compiler (`tsc`).
 
-Next, open your browser to the port that the application is running on.
-
-Open `http://localhost:3003` in your browser.
-
 You should see the version of CockroachDB that is running on your cluster.
 
 ## Setting Up Your Own Project
@@ -28,7 +24,7 @@ You should see the version of CockroachDB that is running on your cluster.
 To setup your own project, install the required modules:
 
 ```
-npm install pg express @types/node @types/pg @types/express
+npm i pg  @types/node @types/pg
 ```
 
 This will also add them to your `package.json` and `package-lock.json` files.

@@ -1,4 +1,4 @@
-# Connection to CockroachDB Serverless using Typescript and Koa
+# Connection to CockroachDB Serverless using TypeScript and Koa
 
 ## How to Run this Code
 
