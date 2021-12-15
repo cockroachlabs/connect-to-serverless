@@ -3,7 +3,7 @@
 // brew install tsc
 // tsc && node dist/app.js
 
-// Use the node-postgres library
+// Import the requirements
 import { Sequelize } from 'sequelize';
 
 //

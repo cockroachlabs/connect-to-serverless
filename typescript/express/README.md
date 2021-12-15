@@ -1,4 +1,4 @@
-# Connection to CockroachDB Serverless using TypeScript and Express
+# Connect to CockroachDB Serverless using TypeScript and Express
 
 ## How to Run this Code
 

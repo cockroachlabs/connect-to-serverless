@@ -3,12 +3,10 @@
 // brew install tsc
 // tsc && node dist/app.js
 
-// Use the node-postgres library
+// Import the requirements
 import Koa from 'koa';
-//import Router = require('koa-router');
 import Router from 'koa-router';
 import Logger from 'koa-logger';
-//import Logger = require('koa-logger');
 import { Pool } from 'pg';
 
 //

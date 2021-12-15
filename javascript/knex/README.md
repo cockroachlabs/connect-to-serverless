@@ -1,4 +1,4 @@
-# Connection to CockroachDB Serverless using JavaScript and Knex 
+# Connect to CockroachDB Serverless using JavaScript and Knex 
 
 ## How to Run this Code
 

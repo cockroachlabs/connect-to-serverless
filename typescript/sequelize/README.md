@@ -1,4 +1,4 @@
-# Connection to CockroachDB Serverless using TypeScript and Sequelize
+# Connect to CockroachDB Serverless using TypeScript and Sequelize
 
 ## How to Run this Code
 

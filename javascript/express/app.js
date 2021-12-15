@@ -2,10 +2,9 @@
 // npm install
 // node app.js
 
+// Import the requirements
 const express = require('express')
 const bodyParser = require('body-parser')
-
-// Use the node-postgres library
 const { Pool, Client } = require('pg')
 
 //

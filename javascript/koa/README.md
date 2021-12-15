@@ -1,4 +1,4 @@
-# Connection to CockroachDB Serverless using JavaScript and Koa
+# Connect to CockroachDB Serverless using JavaScript and Koa
 
 ## How to Run this Code
 

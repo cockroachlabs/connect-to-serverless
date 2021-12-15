@@ -2,11 +2,10 @@
 // npm install
 // node app.js
 
+// Import the requirements
 const Koa = require('koa');
 const Router = require('koa-router');
 const Logger = require('koa-logger');
-
-// Use the node-postgres library
 const { Pool } = require('pg')
 
 //

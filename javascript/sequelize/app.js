@@ -2,7 +2,7 @@
 // npm install
 // node app.js
 
-// Use the node-postgres library
+// Import the requirements
 const Sequelize = require("sequelize-cockroachdb");
 const fs = require('fs');
 

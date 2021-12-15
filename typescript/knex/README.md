@@ -1,4 +1,4 @@
-# Connection to CockroachDB Serverless using TypeScript and Knex
+# Connect to CockroachDB Serverless using TypeScript and Knex
 
 ## How to Run this Code
 

@@ -1,4 +1,4 @@
-# Connection to CockroachDB Serverless using JavaScript and Express
+# Connect to CockroachDB Serverless using JavaScript and Express
 
 ## How to Run this Code
 

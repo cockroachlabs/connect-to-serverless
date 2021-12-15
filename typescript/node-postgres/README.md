@@ -1,4 +1,4 @@
-# Connection to CockroachDB Serverless using TypeScript and Node-Postgres (pg)
+# Connect to CockroachDB Serverless using TypeScript and Node-Postgres (pg)
 
 ## How to Run this Code
 

@@ -1,4 +1,4 @@
-# Connection to CockroachDB Serverless using JavaScript and Sequelize
+# Connect to CockroachDB Serverless using JavaScript and Sequelize
 
 ## How to Run this Code
 
