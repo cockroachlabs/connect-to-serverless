@@ -55,7 +55,7 @@ const router = new Router();
 
 router.get('/', async (ctx) => {
   const { rows } = await ctx.app.pool.query('SELECT version()')
-  ctx.body = rows[0].version; // rows[0].message;
+  ctx.body = rows[0].version;
 });
 
 app.use(Logger());
